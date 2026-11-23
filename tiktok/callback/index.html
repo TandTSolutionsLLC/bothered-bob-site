@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>TikTok Connect</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <a class="logo" href="../../index.html">BOTHERED BOB</a>
+  <nav><a href="../../index.html">Home</a><a href="../../terms.html">Terms</a><a href="../../privacy.html">Privacy</a></nav>
+</header>
+<main>
+  <h1>TikTok Connect</h1>
+  <div class="card">
+    <p id="msg">Your authorization code:</p>
+    <div class="codebox" id="code" aria-live="polite">(no code found)</div>
+    <button class="btn" id="copy" type="button">Copy</button>
+    <p class="muted" id="state"></p>
+  </div>
+  <p class="warn">Paste this code into Bothered Bob Publisher to finish connecting TikTok. Do not share it with anyone else.</p>
+</main>
+<footer class="site">
+  <span>&copy; 2026 Bothered Bob</span>
+  <span><a href="../../terms.html">Terms of Service</a> &middot; <a href="../../privacy.html">Privacy Policy</a></span>
+</footer>
+</div>
+<script>
+(function () {
+  // Reads the code locally only. Nothing is sent anywhere.
+  var p = new URLSearchParams(window.location.search);
+  var code = p.get("code");
+  var state = p.get("state");
+  var err = p.get("error");
+  var box = document.getElementById("code");
+  var btn = document.getElementById("copy");
+  if (code) {
+    box.textContent = code;
+  } else {
+    btn.disabled = true;
+    document.getElementById("msg").textContent = err
+      ? "TikTok returned an error: " + err + (p.get("error_description") ? " (" + p.get("error_description") + ")" : "")
+      : "No authorization code was found in this link.";
+  }
+  if (state) document.getElementById("state").textContent = "State: " + state;
+  btn.addEventListener("click", function () {
+    if (!code) return;
+    var done = function () { btn.textContent = "Copied!"; setTimeout(function () { btn.textContent = "Copy"; }, 2000); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(code).then(done, function () { fallback(); });
+    } else { fallback(); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(box);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      try { document.execCommand("copy"); done(); } catch (e) { btn.textContent = "Select & copy"; }
+    }
+  });
+})();
+</script>
+</body>
+</html>

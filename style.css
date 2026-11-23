@@ -1,0 +1,92 @@
+:root{--navy:#10132b;--navy2:#1b2048;--yellow:#ffec27;--pink:#ff4b8c;--white:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--navy);color:var(--white);font-family:"Pixelify Sans",system-ui,sans-serif;font-size:1.15rem;line-height:1.6}
+a{color:var(--yellow)}
+a:hover{color:var(--pink)}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+header.site{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:4px solid var(--pink);margin-bottom:28px}
+.logo{font-family:"Press Start 2P",monospace;color:var(--yellow);text-decoration:none;font-size:.95rem;text-shadow:3px 3px 0 var(--pink)}
+nav a{font-family:"Press Start 2P",monospace;font-size:.6rem;margin-left:14px;text-decoration:none}
+nav a:first-child{margin-left:0}
+h1,h2{font-family:"Press Start 2P",monospace;line-height:1.5}
+h1{color:var(--yellow);font-size:clamp(1.2rem,5vw,2rem);text-shadow:4px 4px 0 var(--pink)}
+h2{color:var(--pink);font-size:.85rem;margin-top:2em}
+.card{background:var(--navy2);border:4px solid var(--white);box-shadow:8px 8px 0 var(--pink);padding:20px;margin:24px 0}
+.bob{display:block;margin:0 auto 12px;width:160px;height:auto;image-rendering:pixelated}
+.tagline{font-family:"Press Start 2P",monospace;color:var(--yellow);font-size:clamp(.75rem,3.2vw,1rem);text-align:center;margin:28px 0;line-height:1.8}
+.handles{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:0;list-style:none}
+.handles li{background:var(--yellow);color:var(--navy);font-family:"Press Start 2P",monospace;font-size:.6rem;padding:10px 12px;border:3px solid var(--white)}
+.muted{opacity:.8;font-size:1rem}
+footer.site{margin-top:40px;padding-top:16px;border-top:4px solid var(--pink);font-size:.95rem;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+.codebox{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:clamp(1rem,4vw,1.4rem);background:var(--white);color:var(--navy);padding:16px;border:4px solid var(--yellow);word-break:break-all;user-select:all;min-height:3em}
+.btn{font-family:"Press Start 2P",monospace;font-size:.75rem;background:var(--pink);color:var(--white);border:4px solid var(--white);padding:12px 18px;cursor:pointer;margin-top:14px;box-shadow:4px 4px 0 var(--yellow)}
+.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--yellow)}
+.warn{color:var(--yellow)}
+
+/* Homepage */
+.wrap.wide{max-width:1040px}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.hero{display:grid;grid-template-columns:1fr minmax(240px,320px);gap:40px;align-items:center;margin:12px 0 56px}
+.hero h1{font-size:clamp(1.5rem,4.4vw,2.6rem);margin:0 0 20px;line-height:1.35}
+.lede{font-size:1.25rem;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin:24px 0 8px}
+a.btn{display:inline-block;text-decoration:none;margin-top:0}
+a.btn:hover{color:var(--white);background:#ff2d78}
+a.btn.alt{background:var(--yellow);color:var(--navy);box-shadow:4px 4px 0 var(--pink)}
+a.btn.alt:hover{background:#fff27a}
+.phone{margin:0;justify-self:center;width:100%;max-width:320px}
+.screen{position:relative;aspect-ratio:9/16;border:6px solid var(--white);box-shadow:10px 10px 0 var(--pink);overflow:hidden;background:#000}
+.scene{position:absolute;inset:0;opacity:0;transition:opacity .5s steps(4)}
+.scene.is-on{opacity:1}
+.scene img{width:100%;height:100%;display:block;image-rendering:pixelated}
+.cap{position:absolute;left:6%;right:6%;bottom:9%;background:#14172e;border:3px solid var(--white);padding:22px 12px 12px;font-family:"Press Start 2P",monospace;font-size:clamp(.55rem,1.9vw,.72rem);line-height:1.7;color:var(--white)}
+.who{position:absolute;top:-12px;left:10px;background:var(--yellow);color:var(--navy);font-size:.6rem;padding:4px 6px}
+.who.dave{background:#ff8a3d}
+.next{display:block;margin:18px auto 0;font-family:"Press Start 2P",monospace;font-size:.6rem;background:none;color:var(--yellow);border:3px solid var(--yellow);padding:10px 12px;cursor:pointer}
+.next:hover{background:var(--yellow);color:var(--navy)}
+main h2{font-size:clamp(.8rem,2.4vw,1rem);margin:0 0 20px}
+main section{margin-bottom:64px}
+.peeve-list{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:10px}
+.peeve-list li{background:var(--navy2);border:3px solid var(--white);padding:6px 12px;font-size:1.05rem}
+.peeve-list li:nth-child(5n+1){border-color:var(--yellow)}
+.peeve-list li:nth-child(5n+3){border-color:var(--pink)}
+.cast{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.cast li{grid-column:span 3}
+.cast li{display:flex;gap:14px;align-items:flex-end;background:var(--navy2);border:3px solid var(--white);padding:14px 14px 0}
+.cast img{width:64px;height:112px;flex:none;image-rendering:pixelated}
+.cast li div{padding-bottom:14px}
+.cast li.lead{grid-column:span 6;border-color:var(--yellow);box-shadow:6px 6px 0 var(--pink)}
+.cast li.lead img{width:96px;height:168px}
+.cast h3,.shows h3{font-family:"Press Start 2P",monospace;font-size:.7rem;color:var(--yellow);margin:0 0 8px;line-height:1.5}
+.cast p,.shows p{margin:0;font-size:1.05rem;line-height:1.45}
+.shows{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.shows article{border-top:6px solid var(--pink);background:var(--navy2);padding:16px}
+.shows article:nth-child(2){border-top-color:#ff8a3d}
+.shows article:nth-child(3){border-top-color:var(--yellow)}
+.handles{justify-content:flex-start}
+.handles li{padding:0}
+.handles a,.handles .soon{display:block;padding:12px 14px;color:var(--navy);text-decoration:none;font-size:.6rem;line-height:1.8}
+.handles span{display:block;font-family:"Pixelify Sans",system-ui,sans-serif;font-size:1rem}
+.handles a:hover{background:var(--pink);color:var(--white)}
+.handles li.soon{background:transparent;color:var(--white);border-style:dashed}
+.handles li.soon .soon{color:var(--white)}
+.handles li.soon{padding:12px 14px}
+#follow .tagline{text-align:left}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:28px}
+  .phone{max-width:280px}
+  .shows{grid-template-columns:1fr}
+  .cast li,.cast li.lead{grid-column:span 12}
+}
+@media (min-width:761px) and (max-width:980px){.cast li{grid-column:span 6}.cast li.lead{grid-column:span 12}}
+@media (prefers-reduced-motion:reduce){.scene{transition:none}}
+
+/* After Hours card + Ralph caption */
+.shows article.mature{border-top-color:#ff004d}
+.shows .mature h3{display:flex;align-items:center;gap:.5rem}
+.rating{font-family:'Press Start 2P',monospace;font-size:.6rem;background:#ff004d;color:#fff;padding:.3rem .4rem;border-radius:3px;line-height:1}
+.who.ralph{background:#ff3c8c;color:#fff}
+@media (min-width:761px) and (max-width:1100px){.shows{grid-template-columns:repeat(2,1fr)}}
+.cast li.lead3{grid-column:span 4}
+@media (max-width:980px){.cast li.lead3{grid-column:span 12}}
