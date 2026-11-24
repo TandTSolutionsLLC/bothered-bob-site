@@ -60,7 +60,7 @@ main section{margin-bottom:64px}
 .cast li.lead img{width:96px;height:168px}
 .cast h3,.shows h3{font-family:"Press Start 2P",monospace;font-size:.7rem;color:var(--yellow);margin:0 0 8px;line-height:1.5}
 .cast p,.shows p{margin:0;font-size:1.05rem;line-height:1.45}
-.shows{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.shows{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .shows article{border-top:6px solid var(--pink);background:var(--navy2);padding:16px}
 .shows article:nth-child(2){border-top-color:#ff8a3d}
 .shows article:nth-child(3){border-top-color:var(--yellow)}
@@ -84,6 +84,7 @@ main section{margin-bottom:64px}
 
 /* After Hours card + Ralph caption */
 .shows article.mature{border-top-color:#ff004d}
+.shows article.tony{border-top-color:#3ec46d}
 .shows .mature h3{display:flex;align-items:center;gap:.5rem}
 .rating{font-family:'Press Start 2P',monospace;font-size:.6rem;background:#ff004d;color:#fff;padding:.3rem .4rem;border-radius:3px;line-height:1}
 .who.ralph{background:#ff3c8c;color:#fff}
